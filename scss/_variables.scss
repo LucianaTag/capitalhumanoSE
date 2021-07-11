@@ -1,0 +1,26 @@
+$color: #000;
+
+$colorVerde:#00D2AC;
+
+$colorVioleta:#4b458a;
+
+$colorGris:#444446;
+
+$colorGrisDos:#87878a;
+
+$fuente: 'Roboto', sans-serif;
+
+$contenedor: 1140px;
+
+$ancho: 100%;
+
+$enable-gradient: true;
+
+$mapa:(
+	"small":300,
+	"regular": 400,
+	"bold":700,
+	"black":900
+);
+
+$enable-grid-classes: true !default;

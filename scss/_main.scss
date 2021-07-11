@@ -1,0 +1,819 @@
+body{
+    font-family: $fuente;
+    color: $color;
+}
+
+@mixin headerImage ($width, $height){
+    width: $width;
+    height: $height;
+    display: block;
+    }
+
+@mixin tituloPrincipal {
+        color: $colorVioleta;
+        font-family:$fuente;
+    }
+
+@mixin parrafoSitio {
+    font-size: 1em;
+    color: $colorGrisDos;
+}
+
+@each $k, $v in $mapa{
+    .font-#{$k}{
+        font-family: $fuente;
+        font-weight: $v;
+        font-style: normal;
+    }
+}
+
+/*BOTONES*/
+
+button {
+    cursor: pointer;
+    border:none;
+    margin-top: 5px;
+    background-color: white;
+}
+
+@each $button in btn-outline-primary {
+  .btn-outline-primary {
+    color: $color;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+    font-size: $fuente;
+    padding: 15px 15px 15px 15px;
+    justify-content: center;
+    color: #ffffff;
+    background: linear-gradient(to right, $colorVioleta, #1f1b4a);
+    border-radius: 10px;
+    border:none;
+    a {
+        color: white;
+        font-style: $fuente;
+        }
+    &:hover {
+        background: linear-gradient(to right, #1f1b4a, $colorVioleta);
+        }
+    }
+}
+
+#siteHeader {
+    width: 100%;
+    height: 300px;
+    background-image: url(../media/Landing_CapitalHumanos-01.png);
+    background-size: cover;
+    img {
+    @include headerImage (250px, 88px);
+    
+    }
+}
+.whatsapp {
+    width: 40px;
+    position:fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: flex-end;
+    justify-content: center;
+    background-color: $colorVerde;
+    }
+
+    
+#somosTitulo {
+    @include tituloPrincipal;
+    @if $colorVioleta == #4b458a {
+        color:#4b458a;
+        } @else if $colorVioleta == violeta {
+            color:#444070;
+        } @else {
+            color: #000;
+        }
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    .somosTitulo__destacado {
+    @include tituloPrincipal;
+    font-weight: 700;
+    font-size: 5rem;
+    margin-bottom: 0;
+        }
+    }
+
+
+.formar__titulo {
+    color: $colorGris;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: $fuente;
+    text-align: center;
+    text-transform: none;
+    .formar__titulo--destacado {
+    @include tituloPrincipal;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: none;
+    }
+}
+
+/*CARRUSEL DE FOTOS*/
+
+#homeCarousel {
+    margin-top: 30px;
+}
+
+h3 {
+    @include tituloPrincipal;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+p {
+    @include parrafoSitio;
+    
+}
+
+/*QUIENES SOMOS HOME*/
+
+#seccionQuienesSomos {
+    min-height: 300px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.quienesSomos__img {
+    width: 400px;
+    &:hover {
+        width: 450px;
+    }
+}
+
+.quienesSomos__texto {
+    margin-left: 40px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/*NUESTROS CODIGOS HOME*/
+
+#seccionNuestrosCodigos {
+    min-height: 300px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px
+}
+
+.nuestrosCodigos__img {
+    width: 300px;
+    padding-left: 50px;
+    &:hover {
+        width: 400px;
+    }
+}
+
+.nuestrosCodigos__texto {
+    margin-left: 40px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+/*BUSQUEDAS ACTIVAS Y GALAERIA DE FODOS HOME*/
+
+#seccionDos {
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 420px;  
+}
+
+.seccion__busquedasActivas--img {
+    width: 300px;
+    transform: rotate(-10deg);
+}
+
+.seccion__galeria--img {
+  width: 300px;
+  transform: rotate(10deg);
+}
+
+.seccion__titulo {
+    @include tituloPrincipal;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+}
+
+.seccion__texto--dos {
+    font-size: 1em;
+    color: $colorGrisDos;
+    text-align: center;
+}
+
+
+/*EMPLEADOS HOME*/
+
+.seccion__textoEmpleados {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#seccionEmpleados {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+}
+
+#seccionFlor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.seccion__imgFlor {
+    width: 200px;
+    transition: all 200ms ease-in-out;
+    border-radius:150px;
+    &:hover {
+    transform: rotate(60deg);
+    }
+}
+
+.seccion__texto {
+    text-align: left;
+    line-height: 1.4;
+    font-size: 1rem;
+    align-items: center;
+}
+
+.seccion__textotitulo {
+    text-align: left;
+    line-height: 1.4;
+    font-size: 1.5em;
+    align-items: center;
+}
+
+#seccionJavi {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 90px;
+}
+
+/*ÚLTIMA SECCION*/
+
+.seccion__tres {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    .seccion__trestitulo{
+     @include tituloPrincipal;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+    }
+}
+
+/*FOOTER*/
+
+#siteFooter {
+    align-content: space-between;
+    .font {
+    @include tituloPrincipal;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: none;
+    }
+}
+
+.footer {
+  width: 200px;
+  text-align: center;
+}
+
+.col-12 {
+    width: $ancho;
+}
+
+.col-md-6 {
+    width: $ancho/2;
+}
+
+.col-lg-3 {
+    width: $ancho/3;
+}
+
+/*TITULO SECCIONES*/
+
+#titulo {
+    @include tituloPrincipal;
+    font-style: bold;
+    font-weight: 700;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: none;
+    &.subTitulo {
+    text-align: center;
+    }
+}
+
+.titulo__texto {
+    color: #5e5e61;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 400;
+}
+
+/*QUIENES SOMOS*/
+
+.grilla__padre{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin: 0;
+  margin-top: 4em;
+}
+
+.persona__uno{
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+}
+
+.persona__dos{
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+}
+
+.persona__tres{
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+}
+
+.imagen__persona {
+    width: 200px;
+    transition: all 200ms ease-in-out;
+    border-radius:150px
+}
+
+ p.nombre {
+    margin-bottom: 0;
+    &.nombre {
+    color: $colorVioleta;
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 500;
+    }
+    &.puesto {
+    font-weight: 500;
+    }
+}
+
+.imagen__linkedin {
+    width: 40px;
+    margin-top: -15px;
+}
+
+/*SECCION NUESTROS CODIGOS*/
+
+.imagen1{
+    margin-top: 10px;
+    padding: 0 20px;
+    width: 250px;
+}
+
+.contenedor__NuestrosCodigos {
+    background-position: center top;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;  
+}
+
+#listas1 {
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: space-around;
+}
+
+#seccionNuetrosCodigos {
+    @extend .contenedor__NuestrosCodigos;
+    width: 850px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.seccion__NuetrosCodigos--contenedor{
+    @extend .contenedor__NuestrosCodigos;
+    background-color: #e4e4e4;
+    border-radius: 30px;
+
+}
+
+.seccion__NuetrosCodigos--texto {
+    margin-left: 0px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.seccion__NuestrosCodigos--textoderecha {
+    margin-left: 0px;
+    text-align: right;
+    line-height: 1.4;
+}
+
+.seccion__NuestrosCodigos--titulo {
+    @include tituloPrincipal;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.seccion__NuestrosCodigos--parrafo {
+    font-size: 1em;
+    color: $colorVioleta;
+    background-color: $colorVerde;
+    margin-top: 4px;
+}
+
+/*SECCION BUSQUEDAS ACTIVAS*/
+
+.card-title {
+    @include tituloPrincipal;
+    text-align: center;
+}
+
+.card-text {
+    text-align: center;
+}
+
+.btn-primary {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 15px 15px 15px 15px;
+    justify-content: center;
+    color: #ffffff;
+    background: linear-gradient(to right, $colorVioleta , #1f1b4a);
+    border-radius: 10px;
+    border:none;
+    margin-top: 10px;
+    &.btn-primary:hover {
+    background: linear-gradient(to right, #1f1b4a , $colorVioleta);
+    }
+}
+
+.card-body{
+    text-align: center;
+    a {
+    color: white;
+    }
+}
+
+/*ÚLTIMA GALERIA DE FOTOS*/
+
+.image {
+    width: 760px;
+}
+
+.imageDos {
+    width: 380px;
+}
+
+.imageTres {
+    width: 380px;
+}
+
+.imageCuatro {
+    width: 570px;
+}
+
+.imageCinco {
+    width: 1140px;
+}
+
+/*SECCION CONTACTO*/
+
+#mapa {
+    padding: 20px 0;
+    text-align:center;
+}
+
+#contacto {
+    text-align: center;
+}
+
+/*SECCION FORMULARIO*/
+
+#formulario {
+    @include tituloPrincipal;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-between;
+}
+
+#formulario .btn-primary {
+    color: #fff;
+    background-color: $colorVioleta;
+    border-color: $colorVioleta;
+    text-align: center;
+    width: 90px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+#formulario .form-control-file, .form-control-range {
+    color: grey;
+}
+
+/*MEDIA QUERY*/
+@media all and (max-width: 2500px){
+    #siteHeader {
+    width: 100%;
+    height: 350px;
+    background-image: url(../media/Landing_CapitalHumanos-01.png);
+    background-size: cover;
+    }
+}
+
+@media all and (max-width: 1200px){
+    #siteHeader{
+        height: 300px;
+        background-image: url(../media/Landing_CapitalHumanos-011.png);
+    }
+
+    .quienesSomos__img {
+        width: 300px;
+    }
+    .nuestrosCodigos__img {
+        width: 250px;
+        padding-left: 50px;
+    }
+    .seccion__busquedasActivas--img {
+        width: 300px;
+    }
+
+    .seccion__galeria--img {
+        width: 300px;
+    }
+    
+    #seccionJavi {
+        padding-left: 0;
+    }
+}
+
+@media all and (max-width: 992px){
+    .whatsapp {
+        display:none;
+    }
+
+    #seccionDos {
+    height: 800px;  
+    }
+    
+}
+
+
+@media all and (max-width: 768px){
+    #siteFooter .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    }
+
+    #siteFooter .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 35%;
+    }
+    
+    #seccionQuienesSomos {
+        display: flex;
+        margin-left: 0;
+    }
+    #seccionNuestrosCodigos {
+        margin-left: 0;
+    }
+
+    .somosTitulo__destacado {
+        font-size: 3rem;
+    }
+
+    #homeCarousel {
+        display: none;
+    }
+}
+
+
+@media all and (max-width: 576px) {
+    
+    #somosTitulo{
+    font-size: 2rem;
+    }
+
+    #seccionQuienesSomos {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #seccionNuestrosCodigos {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    #seccionDos .texto {
+        text-align: center;
+    }
+
+    #seccionDos {
+        margin-top: 30px;
+    }
+
+    .quienesSomos__texto {
+    text-align: center;
+    }
+
+    .nuestrosCodigos__texto {
+        text-align: center;
+    }
+
+   .seccion__texto{
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .seccion__texto--titulo{
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .seccion__textoEmpleados {
+        margin-top: 20px;
+    }
+
+
+    #siteFooter .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 45%;
+    }
+    
+
+    p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    #titulo {
+        color: $colorVioleta;
+        font-style: bold;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .bajadaTexto {
+        color: #5e5e61;
+        font-size: 1em;
+        text-align: center;
+        font-weight: 400;
+        margin-left: 0;
+    }
+
+.imagen__persona {
+    width: 150px;
+    }
+
+.nombre {
+    color: $colorVioleta;
+    font-size: 1em;
+    text-align: center;
+    font-weight: 500;
+    }
+
+.puesto {
+    font-size: 1em;
+    font-weight: 500;
+    }
+
+.seccion__busquedasActivas--img{
+    padding: 0px;
+    width: 150px;
+    }
+
+#seccion__NuetrosCodigos {
+    width: 500px;
+    min-height: 200px;
+    }
+
+.seccion__NuestrosCodigos--parrafo {
+    font-size: 0.8em;
+    }
+
+#seccionBusquedasActivas {
+    width: 550px;
+    min-height: 200px;
+    }
+
+.textoParrafoBusquedas {
+    font-size: 0.8em;
+    }
+
+.tituloBusquedasActivas {
+    font-size: 2em;
+    }
+
+.imagenBusquedasActivas {
+    width: 200px;
+    transform: rotate(-10deg);
+    }
+
+.imagenGaleria {
+    width: 200px;
+    transform: rotate(10deg);
+    }
+
+.seccion__NuestrosCodigos--titulo {
+    font-size: 2em;
+    }
+
+.imagen1{
+    width: 300px;
+    }
+}
+
+
+
+
