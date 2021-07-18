@@ -19,14 +19,6 @@ body{
     color: $colorGrisDos;
 }
 
-@each $k, $v in $mapa{
-    .font-#{$k}{
-        font-family: $fuente;
-        font-weight: $v;
-        font-style: normal;
-    }
-}
-
 /*BOTONES*/
 
 button {
@@ -47,7 +39,7 @@ button {
     padding: 15px 15px 15px 15px;
     justify-content: center;
     color: #ffffff;
-    background: linear-gradient(to right, $colorVioleta, #1f1b4a);
+    background-color: $colorVioleta;
     border-radius: 10px;
     border:none;
     a {
@@ -622,6 +614,33 @@ p {
 }
 
 @media all and (max-width: 992px){
+    .container {
+        text-align: left;
+        padding-left:5px;
+    }
+
+    .image {
+        width: 900px;
+    }
+
+    .imageDos {
+        width: 900px;
+    }
+    .imageCuatro {
+        width: 465px;
+    }
+    .imageTres {
+        width: 303px;
+    }
+    .imageCinco {
+        width: 950px;
+    }
+
+    #siteHeader{
+        height: 250px;
+        background-image: url(../media/Landing_CapitalHumanos-011.png);
+    }
+
     .whatsapp {
         display:none;
     }
@@ -634,6 +653,32 @@ p {
 
 
 @media all and (max-width: 768px){
+    #siteHeader{
+        height: 200px;
+        background-image: url(../media/Landing_CapitalHumanos-011.png);
+    }
+    .container {
+        text-align:center;
+         padding-left:1px;
+    }
+
+    .image {
+        width: 700px;
+    }
+
+    .imageDos {
+        width: 700px;
+    }
+    .imageCuatro {
+        width: 353px;
+    }
+    .imageTres {
+        width: 231px;
+    }
+    .imageCinco {
+        width: 720px;
+    }
+
     #siteFooter .row {
     display: flex;
     flex-wrap: wrap;
@@ -669,7 +714,31 @@ p {
 
 
 @media all and (max-width: 576px) {
-    
+    .container {
+        text-align:center;
+    }
+    .image {
+        width: 380px;
+    }
+
+    .imageDos {
+        width: 380px;
+    }
+    .imageCuatro {
+        width: 380px;
+    }
+    .imageCinco {
+        width: 380px;
+    }
+    .imageTres {
+        width: 380px;
+    }
+
+    #siteHeader{
+        height: 200px;
+        background-image: url(../media/Landing_CapitalHumanos-011.png);
+    }
+
     #somosTitulo{
     font-size: 2rem;
     }
@@ -770,7 +839,7 @@ p {
 
 .seccion__busquedasActivas--img{
     padding: 0px;
-    width: 150px;
+    width: 300px;
     }
 
 #seccion__NuetrosCodigos {
